@@ -4,7 +4,7 @@
   - Bootcamp: Adalab - Data Analytics (Module 3)
   - Target Environment: Python 3.13.9
 
-## 📝 Descripction
+## Descripction
 
 This project delivers a comprehensive end-to-end data analysis workflow, **transforming raw airline** transactional and demographic data **into actionable insights**.
 
@@ -12,7 +12,7 @@ The primary goal is to **process and analyze two distinct datasets** from an air
 
 The project focuses on **ensuring data quality** through rigorous processing and provides a statistical foundation for **understanding customer behavior within a loyalty framework**.
 
-## 📂 Data Architecture & Repository
+## Data Architecture & Repository
 
 The project structure is organized to separate raw inputs, processed outputs, and analytical stages:
 
@@ -27,7 +27,7 @@ The project structure is organized to separate raw inputs, processed outputs, an
 - **flight_loyalty_analysis.ipynb**: Focuses on EDA and Statistical Analysis.
 - **flight_loyalty_questions.ipynb**: Dedicated to Business Intelligence (Phase 3) and Hypothesis Evaluation (Phase 4).
 
-## ✨ Methodological Framework and Highlights
+## Methodological Framework and Highlights
 
 ### Phase 1: Advanced Data Engineering & Cleaning
 - **Transactional Merge (Broadcasting Strategy)**: Implemented a **Left Join** using the flight activity table as the anchor and **'Loyalty Number' as the unique relational identifier** (Primary Key). This approach preserves the monthly granularity of the transactional data while broadcasting static demographic attributes to every flight record. **Optimized using int64 identifiers** for memory efficiency.
@@ -43,12 +43,12 @@ The project structure is organized to separate raw inputs, processed outputs, an
 - **The "College" Category Case**: To maintain high data standards, "College" graduates were excluded from salary-based charts because their missing values were deemed non-imputable under strict reliability criteria. Analysis focused on the 75% core data.
 
 
-## 🛠️ Technical Stack & Environment
+## Technical Stack & Environment
 - **Core**: Python 3.13.9
 - **Libraries**: pandas, numpy, seaborn, matplotlib (including ticker and Line2D).
 - **Configuration**: warnings suppressed for production-clean output; pd.set_option configured for full feature inspection.
 
-## 🔮 Strategic Recommendations (Roadmap)
+## Strategic Recommendations (Roadmap)
 - **ID Governance**: Maintain the 'Loyalty Number' as the primary index in future ETL migrations to ensure transactional traceability.
 - **Imputation Policy**: Collaborate with business stakeholders to define a formal standard for "College" salary estimation to complete the demographic profile.
 - **Churn Analysis**: Leverage the new "Active Status" flag to develop a Retention Predictive Model.
