@@ -29,17 +29,17 @@ The project structure is organized to separate raw inputs, processed outputs, an
 
 ## Methodological Framework and Highlights
 
-### Phase 1: Advanced Data Engineering & Cleaning
-- **Transactional Merge (Broadcasting Strategy)**: Implemented a **Left Join** using the flight activity table as the anchor and **'Loyalty Number' as the unique relational identifier** (Primary Key). This approach preserves the monthly granularity of the transactional data while broadcasting static demographic attributes to every flight record. **Optimized using int64 identifiers** for memory efficiency.
-- **MNAR Handling (Cancellation Logic)**: Identified a Missing Not At Random (MNAR) pattern in cancellation dates. Since 87.65% of the data was missing because customers hadn't cancelled, we transformed this into a **boolean "Active Status" feature**.
-- **Segmented Salary Imputation**: Handled 25.32% missingness in Salary using **Grouped Imputation Logic (Education + Loyalty Card) via Lambda** functions, preserving the natural variance of the population.
+### Phase 1: Data preparation
+- **Transactional Merge (Left Join using Loyalty Number as the common key.)**: Implemented a **Left Join** using the flight activity table as the anchor and **'Loyalty Number' as the unique relational identifier** (Primary Key). This approach preserves the monthly granularity of the transactional data while broadcasting static demographic attributes to every flight record.
+- **Missing values in cancellation dates correspond to active customers and were therefore preserved.**: Identified a Missing Not At Random (MNAR) pattern in cancellation dates. Since 87.65% of the data was missing because customers hadn't cancelled, we transformed this into a **boolean "Active Status" feature**.
+- **Segmented Salary Imputation**: Handled 25.32% missingness in Salary using **Grouped Imputation Logic (Education + Loyalty Card) via Lambda** functions, Salary values were imputed using the median within Education and Loyalty Card groups.
 
 ### Phase 2: Statistical Rigor & Correlation
 - **Visual Outlier Audit**: Used **Boxplots with independent scales** to inspect dispersion in Flights, Salary, and Points Accumulated.
-- **Non-parametric Correlation (Spearman)**: Essential due to the non-normal distribution of demographic data. This was the tool that statistically disproved the link between income and travel frequency.
+- **Non-parametric Correlation **: the analysis did not reveal a strong correlation.
 
 ### Phase 3 & 4: Business Intelligence & Integrity Safeguards
-- **Dual-Track Analysis**: To prevent Synthetic Bias, specific socio-economic questions were **cross-referenced between original and imputed datasets**.
+- **Dual-Track Analysis**: To avoid bias introduced by imputed values, specific socio-economic questions were **cross-referenced between original and imputed datasets**.
 - **The "College" Category Case**: To maintain high data standards, "College" graduates were excluded from salary-based charts because their missing values were deemed non-imputable under strict reliability criteria. Analysis focused on the 75% core data.
 
 
