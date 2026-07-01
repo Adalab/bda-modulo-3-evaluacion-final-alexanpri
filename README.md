@@ -11,28 +11,28 @@ This project analyzes customer flight activity and loyalty information from an a
 The objective is to clean, integrate and analyze both datasets to identify customer behaviour patterns and answer several business questions through exploratory analysis, statistical summaries and data visualization.
 
 ## Workflow
-Data exploration
-Data cleaning
-Dataset integration
-Exploratory Data Analysis
-Statistical analysis
-Data visualization
-Business insights
+Data exploration  
+Data cleaning  
+Dataset integration  
+Exploratory Data Analysis  
+Statistical analysis  
+Data visualization  
+Business insights  
 
 ## Technologies
-Technologies
-Python
-Pandas
-NumPy
-Matplotlib
-Seaborn
+Technologies  
+Python  
+Pandas  
+NumPy  
+Matplotlib  
+Seaborn  
 
 ## Main results
-Cleaned and merged both datasets using Loyalty Number.
-Identified missing values and handled them according to their meaning.
-Explored numerical and categorical variables.
-Analysed customer behaviour through descriptive statistics and visualisations.
-Evaluated differences in flight bookings across education levels.
+Cleaned and merged both datasets using Loyalty Number.  
+Identified missing values and handled them according to their meaning.  
+Explored numerical and categorical variables.  
+Analysed customer behaviour through descriptive statistics and visualisations.  
+Evaluated differences in flight bookings across education levels.  
 
 ## Future Improvements
 Build a customer segmentation model.
