@@ -35,8 +35,8 @@ Analysed customer behaviour through descriptive statistics and visualisations.
 Evaluated differences in flight bookings across education levels.  
 
 ## Future Improvements
-Build a customer segmentation model.
-Predict customer churn.
-Develop an interactive dashboard.
+Build a customer segmentation model.  
+Predict customer churn.  
+Develop an interactive dashboard.  
 
 
