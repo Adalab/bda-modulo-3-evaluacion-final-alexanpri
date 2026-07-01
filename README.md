@@ -33,9 +33,10 @@ Identified missing values and handled them according to their meaning.
 Explored numerical and categorical variables.
 Analysed customer behaviour through descriptive statistics and visualisations.
 Evaluated differences in flight bookings across education levels.
-Future Improvements
+
+## Future Improvements
 Build a customer segmentation model.
 Predict customer churn.
 Develop an interactive dashboard.
-: Leverage the new "Active Status" flag to develop a Retention Predictive Model.
-- **Interactive BI**: Transition static reporting to a Streamlit/Plotly Dashboard for real-time stakeholder exploration.
+
+
