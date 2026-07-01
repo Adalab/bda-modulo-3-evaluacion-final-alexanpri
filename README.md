@@ -4,52 +4,38 @@
   - Bootcamp: Adalab - Data Analytics (Module 3)
   - Target Environment: Python 3.13.9
 
-## Descripction
+## Project Overview
 
-This project delivers a comprehensive end-to-end data analysis workflow, **transforming raw airline** transactional and demographic data **into actionable insights**.
+This project analyzes customer flight activity and loyalty information from an airline loyalty program.
 
-The primary goal is to **process and analyze two distinct datasets** from an airline's loyalty program to **identify patterns in flight activity** and **evaluate correlations** within customer demographic profiles.
+The objective is to clean, integrate and analyze both datasets to identify customer behaviour patterns and answer several business questions through exploratory analysis, statistical summaries and data visualization.
 
-The project focuses on **ensuring data quality** through rigorous processing and provides a statistical foundation for **understanding customer behavior within a loyalty framework**.
+## Workflow
+Data exploration
+Data cleaning
+Dataset integration
+Exploratory Data Analysis
+Statistical analysis
+Data visualization
+Business insights
 
-## Data Architecture & Repository
+## Technologies
+Technologies
+Python
+Pandas
+NumPy
+Matplotlib
+Seaborn
 
-The project structure is organized to separate raw inputs, processed outputs, and analytical stages:
-
-### Source Layers (Raw Data):
-- **Customer Flight Activity.csv**: Transactional core with >405,000 records. Contains time-series data of monthly bookings, distances, and points.
-- **Customer Loyalty History.csv**: Demographic master file with >16,000 records (location, education, salary, and loyalty tier).
-
-### Production Layer (Processed Data):
-- **customer_loyalty_cleaned.csv**: Fully integrated dataset after cleaning, MNAR handling, and segmented imputation.
-
-### Analytical Layers:
-- **flight_loyalty_analysis.ipynb**: Focuses on EDA and Statistical Analysis.
-- **flight_loyalty_questions.ipynb**: Dedicated to Business Intelligence (Phase 3) and Hypothesis Evaluation (Phase 4).
-
-## Methodological Framework and Highlights
-
-### Phase 1: Data preparation
-- **Transactional Merge (Left Join using Loyalty Number as the common key.)**: Implemented a **Left Join** using the flight activity table as the anchor and **'Loyalty Number' as the unique relational identifier** (Primary Key). This approach preserves the monthly granularity of the transactional data while broadcasting static demographic attributes to every flight record.
-- **Missing values in cancellation dates correspond to active customers and were therefore preserved.**: Identified a Missing Not At Random (MNAR) pattern in cancellation dates. Since 87.65% of the data was missing because customers hadn't cancelled, we transformed this into a **boolean "Active Status" feature**.
-- **Segmented Salary Imputation**: Handled 25.32% missingness in Salary using **Grouped Imputation Logic (Education + Loyalty Card) via Lambda** functions, Salary values were imputed using the median within Education and Loyalty Card groups.
-
-### Phase 2: Statistical Rigor & Correlation
-- **Visual Outlier Audit**: Used **Boxplots with independent scales** to inspect dispersion in Flights, Salary, and Points Accumulated.
-- **Non-parametric Correlation **: the analysis did not reveal a strong correlation.
-
-### Phase 3 & 4: Business Intelligence & Integrity Safeguards
-- **Dual-Track Analysis**: To avoid bias introduced by imputed values, specific socio-economic questions were **cross-referenced between original and imputed datasets**.
-- **The "College" Category Case**: To maintain high data standards, "College" graduates were excluded from salary-based charts because their missing values were deemed non-imputable under strict reliability criteria. Analysis focused on the 75% core data.
-
-
-## Technical Stack & Environment
-- **Core**: Python 3.13.9
-- **Libraries**: pandas, numpy, seaborn, matplotlib (including ticker and Line2D).
-- **Configuration**: warnings suppressed for production-clean output; pd.set_option configured for full feature inspection.
-
-## Strategic Recommendations (Roadmap)
-- **ID Governance**: Maintain the 'Loyalty Number' as the primary index in future ETL migrations to ensure transactional traceability.
-- **Imputation Policy**: Collaborate with business stakeholders to define a formal standard for "College" salary estimation to complete the demographic profile.
-- **Churn Analysis**: Leverage the new "Active Status" flag to develop a Retention Predictive Model.
+## Main results
+Cleaned and merged both datasets using Loyalty Number.
+Identified missing values and handled them according to their meaning.
+Explored numerical and categorical variables.
+Analysed customer behaviour through descriptive statistics and visualisations.
+Evaluated differences in flight bookings across education levels.
+Future Improvements
+Build a customer segmentation model.
+Predict customer churn.
+Develop an interactive dashboard.
+: Leverage the new "Active Status" flag to develop a Retention Predictive Model.
 - **Interactive BI**: Transition static reporting to a Streamlit/Plotly Dashboard for real-time stakeholder exploration.
